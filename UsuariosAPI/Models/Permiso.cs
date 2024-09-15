@@ -5,6 +5,7 @@ namespace UsuariosAPI.Models
 {
     public class Permiso
     {
+        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -13,7 +14,7 @@ namespace UsuariosAPI.Models
 
         public string Descripcion { get; set; }
 
-        // Relación con Roles
-        public string Rol { get; set; }
+        // Relación uno a muchos con Roles
+        public ICollection<Rol> Roles { get; set; }
     }
 }

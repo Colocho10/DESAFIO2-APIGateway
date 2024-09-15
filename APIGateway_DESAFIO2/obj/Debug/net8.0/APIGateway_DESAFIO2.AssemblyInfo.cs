@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("APIGateway_DESAFIO2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b52c20d929e98779db1de91688b45e58c20bd4c3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+766a9af79c494b9d976a7a2d6a08cbe072002d9c")]
 [assembly: System.Reflection.AssemblyProductAttribute("APIGateway_DESAFIO2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("APIGateway_DESAFIO2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
