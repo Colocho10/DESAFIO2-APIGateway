@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using UsuariosAPI.DTOs;
 using UsuariosAPI.Models;
 
 namespace UsuariosAPI.Controllers
@@ -18,26 +19,35 @@ namespace UsuariosAPI.Controllers
 
         // POST: api/Usuarios
         [HttpPost]
-        public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
+        public async Task<ActionResult<Usuario>> PostUsuario(UsuarioDTO usuarioDTO)
         {
             // Validar Nombre
-            if (string.IsNullOrEmpty(usuario.Nombre) || usuario.Nombre.Length < 3 || usuario.Nombre.Length > 50)
+            if (string.IsNullOrEmpty(usuarioDTO.Nombre) || usuarioDTO.Nombre.Length < 3 || usuarioDTO.Nombre.Length > 50)
             {
                 return BadRequest("El nombre es obligatorio y debe tener entre 3 y 50 caracteres.");
             }
 
             // Validar Email
             var emailValidator = new EmailAddressAttribute();
-            if (string.IsNullOrEmpty(usuario.Email) || !emailValidator.IsValid(usuario.Email))
+            if (string.IsNullOrEmpty(usuarioDTO.Email) || !emailValidator.IsValid(usuarioDTO.Email))
             {
                 return BadRequest("El email es obligatorio y debe tener un formato válido.");
             }
 
             // Validar Contraseña
-            if (string.IsNullOrEmpty(usuario.Contraseña) || usuario.Contraseña.Length < 8)
+            if (string.IsNullOrEmpty(usuarioDTO.Contraseña) || usuarioDTO.Contraseña.Length < 8)
             {
                 return BadRequest("La contraseña es obligatoria y debe tener al menos 8 caracteres.");
             }
+
+            // Crear el nuevo Usuario basado en el DTO
+            var usuario = new Usuario
+            {
+                Nombre = usuarioDTO.Nombre,
+                Email = usuarioDTO.Email,
+                Contraseña = usuarioDTO.Contraseña,
+                RolId = usuarioDTO.RolId
+            };
 
             // Agregar usuario a la base de datos
             _context.Usuarios.Add(usuario);
@@ -49,7 +59,7 @@ namespace UsuariosAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Usuario>> GetUsuario(int id)
         {
-            var usuario = await _context.Usuarios.FindAsync(id);
+            var usuario = await _context.Usuarios.Include(u => u.Rol).FirstOrDefaultAsync(u => u.Id == id);
             if (usuario == null)
             {
                 return NotFound();
@@ -60,29 +70,24 @@ namespace UsuariosAPI.Controllers
 
         // PUT: api/Usuarios/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUsuario(int id, Usuario usuario)
+        public async Task<IActionResult> PutUsuario(int id, UsuarioDTO usuarioDTO)
         {
-            if (id != usuario.Id)
+            if (!UsuarioExists(id))
             {
-                return BadRequest("El ID del usuario no coincide.");
+                return NotFound();
             }
 
-            // Validar datos de la entidad actualizada (opcional)
-            if (string.IsNullOrEmpty(usuario.Nombre) || usuario.Nombre.Length < 3 || usuario.Nombre.Length > 50)
+            var usuario = await _context.Usuarios.FindAsync(id);
+            if (usuario == null)
             {
-                return BadRequest("El nombre es obligatorio y debe tener entre 3 y 50 caracteres.");
+                return NotFound();
             }
 
-            var emailValidator = new EmailAddressAttribute();
-            if (string.IsNullOrEmpty(usuario.Email) || !emailValidator.IsValid(usuario.Email))
-            {
-                return BadRequest("El email es obligatorio y debe tener un formato válido.");
-            }
-
-            if (string.IsNullOrEmpty(usuario.Contraseña) || usuario.Contraseña.Length < 8)
-            {
-                return BadRequest("La contraseña es obligatoria y debe tener al menos 8 caracteres.");
-            }
+            // Actualizar el usuario con los datos del DTO
+            usuario.Nombre = usuarioDTO.Nombre;
+            usuario.Email = usuarioDTO.Email;
+            usuario.Contraseña = usuarioDTO.Contraseña;
+            usuario.RolId = usuarioDTO.RolId;
 
             // Marcar la entidad como modificada
             _context.Entry(usuario).State = EntityState.Modified;
