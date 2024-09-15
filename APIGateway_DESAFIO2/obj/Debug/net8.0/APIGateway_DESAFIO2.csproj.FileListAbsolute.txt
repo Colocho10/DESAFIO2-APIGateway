@@ -62,3 +62,17 @@ C:\Users\Lucas\Documents\DSE\DESAFIO2-APIGateway\APIGateway_DESAFIO2\obj\Debug\n
 C:\Users\Lucas\Documents\DSE\DESAFIO2-APIGateway\APIGateway_DESAFIO2\obj\Debug\net8.0\APIGateway_DESAFIO2.pdb
 C:\Users\Lucas\Documents\DSE\DESAFIO2-APIGateway\APIGateway_DESAFIO2\obj\Debug\net8.0\APIGateway_DESAFIO2.genruntimeconfig.cache
 C:\Users\Lucas\Documents\DSE\DESAFIO2-APIGateway\APIGateway_DESAFIO2\obj\Debug\net8.0\ref\APIGateway_DESAFIO2.dll
+C:\Users\carlo\source\repos\APIGateway_DESAFIO2\APIGateway_DESAFIO2\bin\Debug\net8.0\ocelot.json
+C:\Users\carlo\source\repos\APIGateway_DESAFIO2\APIGateway_DESAFIO2\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\carlo\source\repos\APIGateway_DESAFIO2\APIGateway_DESAFIO2\bin\Debug\net8.0\IPAddressRange.dll
+C:\Users\carlo\source\repos\APIGateway_DESAFIO2\APIGateway_DESAFIO2\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\carlo\source\repos\APIGateway_DESAFIO2\APIGateway_DESAFIO2\bin\Debug\net8.0\Microsoft.AspNetCore.MiddlewareAnalysis.dll
+C:\Users\carlo\source\repos\APIGateway_DESAFIO2\APIGateway_DESAFIO2\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\carlo\source\repos\APIGateway_DESAFIO2\APIGateway_DESAFIO2\bin\Debug\net8.0\Microsoft.Extensions.DiagnosticAdapter.dll
+C:\Users\carlo\source\repos\APIGateway_DESAFIO2\APIGateway_DESAFIO2\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\carlo\source\repos\APIGateway_DESAFIO2\APIGateway_DESAFIO2\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\Users\carlo\source\repos\APIGateway_DESAFIO2\APIGateway_DESAFIO2\bin\Debug\net8.0\Ocelot.dll
+C:\Users\carlo\source\repos\APIGateway_DESAFIO2\APIGateway_DESAFIO2\obj\Debug\net8.0\APIGateway_DESAFIO2.csproj.AssemblyReference.cache
+C:\Users\carlo\source\repos\APIGateway_DESAFIO2\APIGateway_DESAFIO2\obj\Debug\net8.0\APIGateway_DESAFIO2.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\carlo\source\repos\APIGateway_DESAFIO2\APIGateway_DESAFIO2\obj\Debug\net8.0\APIGateway_DESAFIO2.sourcelink.json
+C:\Users\carlo\source\repos\APIGateway_DESAFIO2\APIGateway_DESAFIO2\obj\Debug\net8.0\APIGatew.864B5D3B.Up2Date

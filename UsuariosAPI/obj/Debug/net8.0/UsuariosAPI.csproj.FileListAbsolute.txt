@@ -518,3 +518,4 @@ C:\Users\Lucas\Documents\DSE\DESAFIO2-APIGateway\UsuariosAPI\obj\Debug\net8.0\re
 C:\Users\Lucas\Documents\DSE\DESAFIO2-APIGateway\UsuariosAPI\obj\Debug\net8.0\UsuariosAPI.pdb
 C:\Users\Lucas\Documents\DSE\DESAFIO2-APIGateway\UsuariosAPI\obj\Debug\net8.0\UsuariosAPI.genruntimeconfig.cache
 C:\Users\Lucas\Documents\DSE\DESAFIO2-APIGateway\UsuariosAPI\obj\Debug\net8.0\ref\UsuariosAPI.dll
+C:\Users\carlo\source\repos\APIGateway_DESAFIO2\UsuariosAPI\obj\Debug\net8.0\UsuariosAPI.sourcelink.json
