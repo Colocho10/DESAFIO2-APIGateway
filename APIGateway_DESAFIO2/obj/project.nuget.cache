@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "s29/95YLBXjLTI1Y0iuEKr2zVuPceVrU6Xdv+RdgH3EfEwqHEIaOHNFiPIc4W8sQgo+MSAYV9ncMYy3pfOfW/A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\carlo\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.6\\microsoft.visualstudio.azure.containers.tools.targets.1.19.6.nupkg.sha512"
+  ],
+  "logs": []
+}

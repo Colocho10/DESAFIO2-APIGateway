@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\APIGateway_DESAFIO2.props" />
+</Project>
