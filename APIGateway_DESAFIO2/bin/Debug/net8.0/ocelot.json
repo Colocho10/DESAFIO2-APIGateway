@@ -1,0 +1,114 @@
+{
+
+  
+    "Routes": [
+      {
+        "DownstreamPathTemplate": "/api/usuarios",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7255
+          }
+        ],
+        "UpstreamPathTemplate": "/usuarios",
+        "UpstreamHttpMethod": [ "Get" ],
+        "DownstreamHttpMethod": "Get",
+        "SwaggerKey": "Usuarios",
+        "RateLimitOptions": {
+          "ClientWhitelist": [],
+          "EnableRateLimiting": "True",
+          "Period": "1m",
+          "PeriodTimespan": 60,
+          "Limit": 100
+        }
+      },
+      {
+        "DownstreamPathTemplate": "/api/usuarios/{id}",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7255
+          }
+        ],
+        "UpstreamPathTemplate": "/usuarios/{id}",
+        "UpstreamHttpMethod": [ "Get" ],
+        "DownstreamHttpMethod": "Get",
+        "SwaggerKey": "Usuarios"
+      },
+      {
+        "DownstreamPathTemplate": "/api/usuarios",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7255
+          }
+        ],
+        "UpstreamPathTemplate": "/usuarios",
+        "UpstreamHttpMethod": [ "Post" ],
+        "DownstreamHttpMethod": "Post",
+        "SwaggerKey": "Usuarios"
+      },
+      {
+        "DownstreamPathTemplate": "/api/usuarios/{id}",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7255
+          }
+        ],
+        "UpstreamPathTemplate": "/usuarios/{id}",
+        "UpstreamHttpMethod": [ "Put" ],
+        "DownstreamHttpMethod": "Put",
+        "SwaggerKey": "Usuarios"
+      },
+      {
+        "DownstreamPathTemplate": "/api/usuarios/{id}",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7255
+          }
+        ],
+        "UpstreamPathTemplate": "/usuarios/{id}",
+        "UpstreamHttpMethod": [ "Delete" ],
+        "DownstreamHttpMethod": "Delete",
+        "SwaggerKey": "Usuarios"
+      }
+    ],
+    "GlobalConfiguration": {
+      "BaseUrl": "https://localhost:5000",
+      "FileCacheOptions": {
+        "TtlSeconds": 60,
+        "Region": "default"
+      },
+      "swaggerEndPoints": [
+        {
+          "Key": "Usuarios",
+          "Config": [
+            {
+              "Name": "Usuarios API",
+              "Scheme": "https",
+              "Host": "localhost",
+              "Port": 7255,
+              "Path": "/swagger/v1/swagger.json"
+            }
+          ]
+        }
+      ],
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": "True",
+        "Period": "1m",
+        "PeriodTimespan": 60,
+        "Limit": 100
+      }
+    }
+  
+  
+
+}
