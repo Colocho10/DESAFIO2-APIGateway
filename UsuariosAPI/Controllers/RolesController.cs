@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using UsuariosAPI.DTOs;
 using UsuariosAPI.Models;
 
 namespace UsuariosAPI.Controllers
@@ -19,7 +18,7 @@ namespace UsuariosAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Rol>> GetRol(int id)
         {
-            var rol = await _context.Roles.Include(r => r.Permiso).FirstOrDefaultAsync(r => r.Id == id);
+            var rol = await _context.Roles.FindAsync(id);
             if (rol == null)
             {
                 return NotFound();
@@ -30,32 +29,32 @@ namespace UsuariosAPI.Controllers
 
         // POST: api/Roles
         [HttpPost]
-        public async Task<ActionResult<Rol>> PostRol([FromBody] RolDTO rolDTO)
+        public async Task<ActionResult<Rol>> PostRol([FromBody] Rol rol)
         {
-            if (rolDTO == null)
+            if (rol == null)
             {
                 return BadRequest("El rol no puede ser nulo.");
             }
 
+            var validationErrors = new List<string>();
+
             // Validar Nombre
-            if (string.IsNullOrEmpty(rolDTO.Nombre) || rolDTO.Nombre.Length < 3 || rolDTO.Nombre.Length > 30)
+            if (string.IsNullOrEmpty(rol.Nombre) || rol.Nombre.Length < 3 || rol.Nombre.Length > 30)
             {
-                return BadRequest("El campo 'Nombre' es obligatorio y debe tener entre 3 y 30 caracteres.");
+                validationErrors.Add("El campo 'Nombre' es obligatorio y debe tener entre 3 y 30 caracteres.");
             }
 
             // Validar Descripción (opcional)
-            if (rolDTO.Descripcion != null && rolDTO.Descripcion.Length > 100)
+            if (rol.Descripcion != null && rol.Descripcion.Length > 100)
             {
-                return BadRequest("El campo 'Descripción', si se proporciona, no debe exceder los 100 caracteres.");
+                validationErrors.Add("El campo 'Descripción', si se proporciona, no debe exceder los 100 caracteres.");
             }
 
-            // Crear el nuevo Rol basado en el DTO
-            var rol = new Rol
+            // Si hay errores de validación, devolver un mensaje con todos los errores
+            if (validationErrors.Count > 0)
             {
-                Nombre = rolDTO.Nombre,
-                Descripcion = rolDTO.Descripcion,
-                PermisoId = rolDTO.PermisoId
-            };
+                return BadRequest(new { Errores = validationErrors });
+            }
 
             // Agregar el nuevo rol
             _context.Roles.Add(rol);
@@ -66,23 +65,23 @@ namespace UsuariosAPI.Controllers
 
         // PUT: api/Roles/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutRol(int id, [FromBody] RolDTO rolDTO)
+        public async Task<IActionResult> PutRol(int id, [FromBody] Rol rol)
         {
-            if (!RolExists(id))
-            {
-                return NotFound();
-            }
-
-            var rol = await _context.Roles.FindAsync(id);
             if (rol == null)
             {
-                return NotFound();
+                return BadRequest("El rol no puede ser nulo.");
             }
 
-            // Actualizar el rol con los datos del DTO
-            rol.Nombre = rolDTO.Nombre;
-            rol.Descripcion = rolDTO.Descripcion;
-            rol.PermisoId = rolDTO.PermisoId;
+            if (id != rol.Id)
+            {
+                return BadRequest("El ID del rol no coincide.");
+            }
+
+            // Validar Nombre
+            if (string.IsNullOrEmpty(rol.Nombre) || rol.Nombre.Length < 3 || rol.Nombre.Length > 30)
+            {
+                return BadRequest("El nombre es obligatorio y debe tener entre 3 y 30 caracteres.");
+            }
 
             _context.Entry(rol).State = EntityState.Modified;
 

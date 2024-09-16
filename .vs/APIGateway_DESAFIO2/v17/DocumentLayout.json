@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F14BD64B-4949-4A1B-A171-C4A8F910BF88}|UsuariosAPI\\UsuariosAPI.csproj|c:\\users\\carlo\\source\\repos\\apigateway_desafio2\\usuariosapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{F14BD64B-4949-4A1B-A171-C4A8F910BF88}|UsuariosAPI\\UsuariosAPI.csproj|solutionrelative:usuariosapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{B3F15D4A-10D1-4E81-B98F-7AE3A312166B}|APIGateway_DESAFIO2\\APIGateway_DESAFIO2.csproj|c:\\users\\carlo\\source\\repos\\apigateway_desafio2\\apigateway_desafio2\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B3F15D4A-10D1-4E81-B98F-7AE3A312166B}|APIGateway_DESAFIO2\\APIGateway_DESAFIO2.csproj|solutionrelative:apigateway_desafio2\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3F15D4A-10D1-4E81-B98F-7AE3A312166B}|APIGateway_DESAFIO2\\APIGateway_DESAFIO2.csproj|c:\\users\\carlo\\source\\repos\\apigateway_desafio2\\apigateway_desafio2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3F15D4A-10D1-4E81-B98F-7AE3A312166B}|APIGateway_DESAFIO2\\APIGateway_DESAFIO2.csproj|solutionrelative:apigateway_desafio2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +18,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ocelot.json",
+              "DocumentMoniker": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2\\ocelot.json",
+              "RelativeDocumentMoniker": "APIGateway_DESAFIO2\\ocelot.json",
+              "ToolTip": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2\\ocelot.json",
+              "RelativeToolTip": "APIGateway_DESAFIO2\\ocelot.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-15T18:44:26.407Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:2:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
@@ -58,15 +76,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\UsuariosAPI\\appsettings.json",
-              "RelativeDocumentMoniker": "UsuariosAPI\\appsettings.json",
-              "ToolTip": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\UsuariosAPI\\appsettings.json",
-              "RelativeToolTip": "UsuariosAPI\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-15T22:14:47.553Z",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2\\Program.cs",
+              "RelativeDocumentMoniker": "APIGateway_DESAFIO2\\Program.cs",
+              "ToolTip": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2\\Program.cs",
+              "RelativeToolTip": "APIGateway_DESAFIO2\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T18:45:30.121Z",
               "EditorCaption": ""
             }
           ]

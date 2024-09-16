@@ -11,8 +11,8 @@ using UsuariosAPI.Models;
 namespace UsuariosAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240915224401_Migracion_Inicial")]
-    partial class Migracion_Inicial
+    [Migration("20240915185158_Migracion inicial")]
+    partial class Migracioninicial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,6 +41,10 @@ namespace UsuariosAPI.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<string>("Rol")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Permisos");
@@ -62,12 +66,11 @@ namespace UsuariosAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PermisoId")
-                        .HasColumnType("int");
+                    b.Property<string>("Permisos")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("PermisoId");
 
                     b.ToTable("Roles");
                 });
@@ -92,46 +95,9 @@ namespace UsuariosAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RolId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("RolId");
-
                     b.ToTable("Usuarios");
-                });
-
-            modelBuilder.Entity("UsuariosAPI.Models.Rol", b =>
-                {
-                    b.HasOne("UsuariosAPI.Models.Permiso", "Permiso")
-                        .WithMany("Roles")
-                        .HasForeignKey("PermisoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Permiso");
-                });
-
-            modelBuilder.Entity("UsuariosAPI.Models.Usuario", b =>
-                {
-                    b.HasOne("UsuariosAPI.Models.Rol", "Rol")
-                        .WithMany("Usuarios")
-                        .HasForeignKey("RolId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Rol");
-                });
-
-            modelBuilder.Entity("UsuariosAPI.Models.Permiso", b =>
-                {
-                    b.Navigation("Roles");
-                });
-
-            modelBuilder.Entity("UsuariosAPI.Models.Rol", b =>
-                {
-                    b.Navigation("Usuarios");
                 });
 #pragma warning restore 612, 618
         }
