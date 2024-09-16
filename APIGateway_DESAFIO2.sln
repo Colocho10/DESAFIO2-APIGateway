@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIGateway_DESAFIO2", "APIGateway_DESAFIO2\APIGateway_DESAFIO2.csproj", "{B3F15D4A-10D1-4E81-B98F-7AE3A312166B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIGateway_DESAFIO2", "APIGateway_DESAFIO2\APIGateway_DESAFIO2.csproj", "{B3F15D4A-10D1-4E81-B98F-7AE3A312166B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsuariosAPI", "UsuariosAPI\UsuariosAPI.csproj", "{F14BD64B-4949-4A1B-A171-C4A8F910BF88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsuariosAPI", "UsuariosAPI\UsuariosAPI.csproj", "{F14BD64B-4949-4A1B-A171-C4A8F910BF88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsuariosAPI.Tests", "UsuariosAPI.Tests\UsuariosAPI.Tests.csproj", "{9ED5F28F-6E2D-4A48-9E8D-824E58D48291}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{F14BD64B-4949-4A1B-A171-C4A8F910BF88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F14BD64B-4949-4A1B-A171-C4A8F910BF88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F14BD64B-4949-4A1B-A171-C4A8F910BF88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ED5F28F-6E2D-4A48-9E8D-824E58D48291}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ED5F28F-6E2D-4A48-9E8D-824E58D48291}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ED5F28F-6E2D-4A48-9E8D-824E58D48291}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ED5F28F-6E2D-4A48-9E8D-824E58D48291}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
