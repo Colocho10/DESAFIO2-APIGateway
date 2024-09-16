@@ -7,16 +7,11 @@ namespace UsuariosAPI.Models
     public class Usuario
     {
         [Key]
-        public int Id { get; set; }
+        public int Id { get; set; } // Este campo se generará automáticamente
         public string Nombre { get; set; }
         public string Email { get; set; }
         public string Contraseña { get; set; }
-
-        // Clave foránea para el Rol
-        [ForeignKey("Rol")]
         public int RolId { get; set; }
-
-        // Propiedad de navegación
         public Rol Rol { get; set; }
     }
 }

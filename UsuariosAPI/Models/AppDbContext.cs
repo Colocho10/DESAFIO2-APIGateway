@@ -10,4 +10,5 @@ namespace UsuariosAPI.Models
         public DbSet<Rol> Roles { get; set; }
         public DbSet<Permiso> Permisos { get; set; }
     }
+
 }
