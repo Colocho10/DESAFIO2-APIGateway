@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\UsuariosAPI\\UsuariosAPI.csproj": {}
+    "C:\\Users\\Lucas\\Documents\\DSE\\DESAFIO2-APIGateway\\UsuariosAPI\\UsuariosAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\UsuariosAPI\\UsuariosAPI.csproj": {
+    "C:\\Users\\Lucas\\Documents\\DSE\\DESAFIO2-APIGateway\\UsuariosAPI\\UsuariosAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\UsuariosAPI\\UsuariosAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Lucas\\Documents\\DSE\\DESAFIO2-APIGateway\\UsuariosAPI\\UsuariosAPI.csproj",
         "projectName": "UsuariosAPI",
-        "projectPath": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\UsuariosAPI\\UsuariosAPI.csproj",
-        "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\UsuariosAPI\\obj\\",
+        "projectPath": "C:\\Users\\Lucas\\Documents\\DSE\\DESAFIO2-APIGateway\\UsuariosAPI\\UsuariosAPI.csproj",
+        "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lucas\\Documents\\DSE\\DESAFIO2-APIGateway\\UsuariosAPI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -73,6 +78,10 @@
               "target": "Package",
               "version": "[8.0.8, )"
             },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.21.0, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[8.0.5, )"
@@ -105,7 +114,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2.csproj": {}
+    "C:\\Users\\Lucas\\Documents\\DSE\\DESAFIO2-APIGateway\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2.csproj": {
+    "C:\\Users\\Lucas\\Documents\\DSE\\DESAFIO2-APIGateway\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2.csproj",
+        "projectUniqueName": "C:\\Users\\Lucas\\Documents\\DSE\\DESAFIO2-APIGateway\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2.csproj",
         "projectName": "APIGateway_DESAFIO2",
-        "projectPath": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2.csproj",
-        "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2\\obj\\",
+        "projectPath": "C:\\Users\\Lucas\\Documents\\DSE\\DESAFIO2-APIGateway\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2.csproj",
+        "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lucas\\Documents\\DSE\\DESAFIO2-APIGateway\\APIGateway_DESAFIO2\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -73,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
