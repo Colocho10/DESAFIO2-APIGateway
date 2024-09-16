@@ -25,7 +25,7 @@ namespace UsuariosAPI.Controllers
                 return NotFound();
             }
 
-            return permiso;
+            return Ok(permiso);
         }
 
         // POST: api/Permisos
