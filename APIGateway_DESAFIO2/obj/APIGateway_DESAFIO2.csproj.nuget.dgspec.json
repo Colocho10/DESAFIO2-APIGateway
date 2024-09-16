@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2.csproj": {}
+    "C:\\Users\\ANGEL\\source\\repos\\DESAFIO2-APIGateway\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2.csproj": {
+    "C:\\Users\\ANGEL\\source\\repos\\DESAFIO2-APIGateway\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2.csproj",
+        "projectUniqueName": "C:\\Users\\ANGEL\\source\\repos\\DESAFIO2-APIGateway\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2.csproj",
         "projectName": "APIGateway_DESAFIO2",
-        "projectPath": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2.csproj",
-        "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2\\obj\\",
+        "projectPath": "C:\\Users\\ANGEL\\source\\repos\\DESAFIO2-APIGateway\\APIGateway_DESAFIO2\\APIGateway_DESAFIO2.csproj",
+        "packagesPath": "C:\\Users\\ANGEL\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ANGEL\\source\\repos\\DESAFIO2-APIGateway\\APIGateway_DESAFIO2\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Visual\\Componentes\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ANGEL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -45,6 +50,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.OutputCaching.StackExchangeRedis": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
               "version": "[1.19.6, )"
@@ -73,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

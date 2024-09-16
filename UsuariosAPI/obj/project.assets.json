@@ -640,6 +640,27 @@
           }
         }
       },
+      "Microsoft.AspNetCore.OutputCaching.StackExchangeRedis/8.0.8": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.1",
+          "Microsoft.Extensions.Options": "8.0.2",
+          "StackExchange.Redis": "2.7.27"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.AspNetCore.OutputCaching.StackExchangeRedis.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.OutputCaching.StackExchangeRedis.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.AspNetCore.Razor.Language/6.0.24": {
         "type": "package",
         "compile": {
@@ -3689,6 +3710,21 @@
         "lib/netstandard1.0/zh-Hant/Humanizer.resources.dll",
         "lib/netstandard2.0/zh-Hant/Humanizer.resources.dll",
         "logo.png"
+      ]
+    },
+    "Microsoft.AspNetCore.OutputCaching.StackExchangeRedis/8.0.8": {
+      "sha512": "Sfafw4WmRyorhSY7OY0a2gP5UYqOrzFSamZHbwp7yVsrD2wmZQH5ZYD4VPbW2VFewtDEafGUEY4hHsBETBnccQ==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.outputcaching.stackexchangeredis/8.0.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net8.0/Microsoft.AspNetCore.OutputCaching.StackExchangeRedis.dll",
+        "lib/net8.0/Microsoft.AspNetCore.OutputCaching.StackExchangeRedis.xml",
+        "microsoft.aspnetcore.outputcaching.stackexchangeredis.8.0.8.nupkg.sha512",
+        "microsoft.aspnetcore.outputcaching.stackexchangeredis.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Razor.Language/6.0.24": {
@@ -8273,6 +8309,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Microsoft.AspNetCore.OutputCaching.StackExchangeRedis >= 8.0.8",
       "Microsoft.EntityFrameworkCore >= 8.0.8",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.8",
       "Microsoft.EntityFrameworkCore.InMemory >= 8.0.8",
@@ -8285,19 +8322,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\carlo\\.nuget\\packages\\": {}
+    "C:\\Users\\ANGEL\\.nuget\\packages\\": {},
+    "D:\\Visual\\Componentes\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\UsuariosAPI\\UsuariosAPI.csproj",
+      "projectUniqueName": "C:\\Users\\ANGEL\\source\\repos\\DESAFIO2-APIGateway\\UsuariosAPI\\UsuariosAPI.csproj",
       "projectName": "UsuariosAPI",
-      "projectPath": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\UsuariosAPI\\UsuariosAPI.csproj",
-      "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\UsuariosAPI\\obj\\",
+      "projectPath": "C:\\Users\\ANGEL\\source\\repos\\DESAFIO2-APIGateway\\UsuariosAPI\\UsuariosAPI.csproj",
+      "packagesPath": "C:\\Users\\ANGEL\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ANGEL\\source\\repos\\DESAFIO2-APIGateway\\UsuariosAPI\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\Visual\\Componentes\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ANGEL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8305,6 +8347,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -8328,6 +8371,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Microsoft.AspNetCore.OutputCaching.StackExchangeRedis": {
+            "target": "Package",
+            "version": "[8.0.8, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[8.0.8, )"
@@ -8388,7 +8435,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

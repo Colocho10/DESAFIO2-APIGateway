@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "UsuariosAPI/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.OutputCaching.StackExchangeRedis": "8.0.8",
           "Microsoft.EntityFrameworkCore": "8.0.8",
           "Microsoft.EntityFrameworkCore.Design": "8.0.8",
           "Microsoft.EntityFrameworkCore.InMemory": "8.0.8",
@@ -593,6 +594,19 @@
         "resources": {
           "lib/net6.0/zh-Hant/Humanizer.resources.dll": {
             "locale": "zh-Hant"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.OutputCaching.StackExchangeRedis/8.0.8": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.1",
+          "Microsoft.Extensions.Options": "8.0.2",
+          "StackExchange.Redis": "2.8.16"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.OutputCaching.StackExchangeRedis.dll": {
+            "assemblyVersion": "8.0.8.0",
+            "fileVersion": "8.0.824.36908"
           }
         }
       },
@@ -1962,12 +1976,6 @@
       "System.Text.Json/8.0.4": {
         "dependencies": {
           "System.Text.Encodings.Web": "8.0.0"
-        },
-        "runtime": {
-          "lib/net8.0/System.Text.Json.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.724.31311"
-          }
         }
       },
       "System.Threading.Channels/7.0.0": {},
@@ -2363,6 +2371,13 @@
       "sha512": "sha512-VIXB7HCUC34OoaGnO3HJVtSv2/wljPhjV7eKH4+TFPgQdJj2lvHNKY41Dtg0Bphu7X5UaXFR4zrYYyo+GNOjbA==",
       "path": "humanizer.core.zh-hant/2.14.1",
       "hashPath": "humanizer.core.zh-hant.2.14.1.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.OutputCaching.StackExchangeRedis/8.0.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Sfafw4WmRyorhSY7OY0a2gP5UYqOrzFSamZHbwp7yVsrD2wmZQH5ZYD4VPbW2VFewtDEafGUEY4hHsBETBnccQ==",
+      "path": "microsoft.aspnetcore.outputcaching.stackexchangeredis/8.0.8",
+      "hashPath": "microsoft.aspnetcore.outputcaching.stackexchangeredis.8.0.8.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Razor.Language/6.0.24": {
       "type": "package",

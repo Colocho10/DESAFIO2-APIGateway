@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json;
 using UsuariosAPI.DTOs;
 using UsuariosAPI.Models;
 
@@ -11,15 +13,17 @@ namespace UsuariosAPI.Controllers
     public class UsuariosController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly IConnectionMultiplexer _redis;
 
-        public UsuariosController(AppDbContext context)
+        public UsuariosController(AppDbContext context, IConnectionMultiplexer redis)
         {
             _context = context;
+            _redis = redis;
         }
 
         // POST: api/Usuarios
         [HttpPost]
-        public async Task<ActionResult<Usuario>> PostUsuario(UsuarioDTO usuarioDTO)
+        public async Task<ActionResult<Usuario>> PostUsuario([FromBody] UsuarioDTO usuarioDTO)
         {
             // Validar Nombre
             if (string.IsNullOrEmpty(usuarioDTO.Nombre) || usuarioDTO.Nombre.Length < 3 || usuarioDTO.Nombre.Length > 50)
@@ -52,25 +56,41 @@ namespace UsuariosAPI.Controllers
             // Agregar usuario a la base de datos
             _context.Usuarios.Add(usuario);
             await _context.SaveChangesAsync();
+
+            // Invalidar cache de lista de usuarios
+            var db = _redis.GetDatabase();
+            string cacheKeyList = "usuarioList";
+            await db.KeyDeleteAsync(cacheKeyList);
+
             return CreatedAtAction(nameof(GetUsuario), new { id = usuario.Id }, usuario);
         }
+
 
         // GET: api/Usuarios/{id}
         [HttpGet("{id}")]
         public async Task<ActionResult<Usuario>> GetUsuario(int id)
         {
+            var db = _redis.GetDatabase();
+            string cacheKey = $"usuario_{id}";
+            var usuarioCache = await db.StringGetAsync(cacheKey);
+            if (!usuarioCache.IsNullOrEmpty)
+            {
+                return JsonSerializer.Deserialize<Usuario>(usuarioCache);
+            }
+
             var usuario = await _context.Usuarios.Include(u => u.Rol).FirstOrDefaultAsync(u => u.Id == id);
             if (usuario == null)
             {
                 return NotFound();
             }
 
+            await db.StringSetAsync(cacheKey, JsonSerializer.Serialize(usuario), TimeSpan.FromMinutes(10));
             return usuario;
         }
 
         // PUT: api/Usuarios/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUsuario(int id, UsuarioDTO usuarioDTO)
+        public async Task<IActionResult> PutUsuario(int id, [FromBody] UsuarioDTO usuarioDTO)
         {
             if (!UsuarioExists(id))
             {
@@ -95,6 +115,13 @@ namespace UsuariosAPI.Controllers
             try
             {
                 await _context.SaveChangesAsync();
+
+                // Invalidar el cache para el usuario individual y la lista de usuarios
+                var db = _redis.GetDatabase();
+                string cacheKeyUsuario = $"usuario_{id}";
+                string cacheKeyList = "usuarioList";
+                await db.KeyDeleteAsync(cacheKeyUsuario);
+                await db.KeyDeleteAsync(cacheKeyList);
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -123,6 +150,13 @@ namespace UsuariosAPI.Controllers
 
             _context.Usuarios.Remove(usuario);
             await _context.SaveChangesAsync();
+
+            // Invalidar el cache del usuario y de la lista de usuarios
+            var db = _redis.GetDatabase();
+            string cacheKeyUsuario = $"usuario_{id}";
+            string cacheKeyList = "usuarioList";
+            await db.KeyDeleteAsync(cacheKeyUsuario);
+            await db.KeyDeleteAsync(cacheKeyList);
 
             return NoContent();
         }

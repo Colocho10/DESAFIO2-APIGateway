@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
+using System.Text.Json;
 using UsuariosAPI.DTOs;
 using UsuariosAPI.Models;
 
@@ -10,21 +12,33 @@ namespace UsuariosAPI.Controllers
     public class PermisosController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly IConnectionMultiplexer _redis;
 
-        public PermisosController(AppDbContext context)
+        public PermisosController(AppDbContext context, IConnectionMultiplexer redis)
         {
             _context = context;
+            _redis = redis;
         }
 
+        // GET: api/Permisos/{id}
         [HttpGet("{id}")]
         public async Task<ActionResult<Permiso>> GetPermiso(int id)
         {
+            var db = _redis.GetDatabase();
+            string cacheKey = $"permiso_{id}";
+            var permisoCache = await db.StringGetAsync(cacheKey);
+            if (!permisoCache.IsNullOrEmpty)
+            {
+                return JsonSerializer.Deserialize<Permiso>(permisoCache);
+            }
+
             var permiso = await _context.Permisos.FindAsync(id);
             if (permiso == null)
             {
                 return NotFound();
             }
 
+            await db.StringSetAsync(cacheKey, JsonSerializer.Serialize(permiso), TimeSpan.FromMinutes(10));
             return permiso;
         }
 
@@ -49,7 +63,6 @@ namespace UsuariosAPI.Controllers
                 return BadRequest("El campo 'Descripción' no debe exceder los 100 caracteres.");
             }
 
-            // Crear el nuevo Permiso basado en el DTO
             var permiso = new Permiso
             {
                 Nombre = permisoDTO.Nombre,
@@ -58,6 +71,11 @@ namespace UsuariosAPI.Controllers
 
             _context.Permisos.Add(permiso);
             await _context.SaveChangesAsync();
+
+            // Invalidar cache de lista de permisos
+            var db = _redis.GetDatabase();
+            string cacheKeyList = "permisoList";
+            await db.KeyDeleteAsync(cacheKeyList);
 
             return CreatedAtAction(nameof(GetPermiso), new { id = permiso.Id }, permiso);
         }
@@ -77,7 +95,6 @@ namespace UsuariosAPI.Controllers
                 return NotFound();
             }
 
-            // Actualizar el permiso con los datos del DTO
             permiso.Nombre = permisoDTO.Nombre;
             permiso.Descripcion = permisoDTO.Descripcion;
 
@@ -86,6 +103,13 @@ namespace UsuariosAPI.Controllers
             try
             {
                 await _context.SaveChangesAsync();
+
+                // Invalidar el cache para el permiso individual y la lista de permisos
+                var db = _redis.GetDatabase();
+                string cacheKeyPermiso = $"permiso_{id}";
+                string cacheKeyList = "permisoList";
+                await db.KeyDeleteAsync(cacheKeyPermiso);
+                await db.KeyDeleteAsync(cacheKeyList);
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -114,6 +138,13 @@ namespace UsuariosAPI.Controllers
 
             _context.Permisos.Remove(permiso);
             await _context.SaveChangesAsync();
+
+            // Invalidar el cache del permiso y de la lista de permisos
+            var db = _redis.GetDatabase();
+            string cacheKeyPermiso = $"permiso_{id}";
+            string cacheKeyList = "permisoList";
+            await db.KeyDeleteAsync(cacheKeyPermiso);
+            await db.KeyDeleteAsync(cacheKeyList);
 
             return NoContent();
         }

@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
+using System.Text.Json;
 using UsuariosAPI.DTOs;
 using UsuariosAPI.Models;
 
@@ -10,21 +12,34 @@ namespace UsuariosAPI.Controllers
     public class RolesController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly IConnectionMultiplexer _redis;
 
-        public RolesController(AppDbContext context)
+        public RolesController(AppDbContext context, IConnectionMultiplexer redis)
         {
             _context = context;
+            _redis = redis;
         }
 
+
+        // GET: api/Roles/{id}
         [HttpGet("{id}")]
         public async Task<ActionResult<Rol>> GetRol(int id)
         {
+            var db = _redis.GetDatabase();
+            string cacheKey = $"rol_{id}";
+            var rolCache = await db.StringGetAsync(cacheKey);
+            if (!rolCache.IsNullOrEmpty)
+            {
+                return JsonSerializer.Deserialize<Rol>(rolCache);
+            }
+
             var rol = await _context.Roles.Include(r => r.Permiso).FirstOrDefaultAsync(r => r.Id == id);
             if (rol == null)
             {
                 return NotFound();
             }
 
+            await db.StringSetAsync(cacheKey, JsonSerializer.Serialize(rol), TimeSpan.FromMinutes(10));
             return rol;
         }
 
@@ -61,6 +76,11 @@ namespace UsuariosAPI.Controllers
             _context.Roles.Add(rol);
             await _context.SaveChangesAsync();
 
+            // Invalidar cache de lista de roles
+            var db = _redis.GetDatabase();
+            string cacheKeyList = "rolList";
+            await db.KeyDeleteAsync(cacheKeyList);
+
             return CreatedAtAction(nameof(GetRol), new { id = rol.Id }, rol);
         }
 
@@ -89,6 +109,13 @@ namespace UsuariosAPI.Controllers
             try
             {
                 await _context.SaveChangesAsync();
+
+                // Invalidar el cache para el rol individual y la lista de roles
+                var db = _redis.GetDatabase();
+                string cacheKeyRol = $"rol_{id}";
+                string cacheKeyList = "rolList";
+                await db.KeyDeleteAsync(cacheKeyRol);
+                await db.KeyDeleteAsync(cacheKeyList);
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -117,6 +144,13 @@ namespace UsuariosAPI.Controllers
 
             _context.Roles.Remove(rol);
             await _context.SaveChangesAsync();
+
+            // Invalidar el cache del rol y de la lista de roles
+            var db = _redis.GetDatabase();
+            string cacheKeyRol = $"rol_{id}";
+            string cacheKeyList = "rolList";
+            await db.KeyDeleteAsync(cacheKeyRol);
+            await db.KeyDeleteAsync(cacheKeyList);
 
             return NoContent();
         }
