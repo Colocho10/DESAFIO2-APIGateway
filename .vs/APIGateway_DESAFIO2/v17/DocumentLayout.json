@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F14BD64B-4949-4A1B-A171-C4A8F910BF88}|UsuariosAPI\\UsuariosAPI.csproj|c:\\users\\carlo\\source\\repos\\apigateway_desafio2\\usuariosapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{F14BD64B-4949-4A1B-A171-C4A8F910BF88}|UsuariosAPI\\UsuariosAPI.csproj|solutionrelative:usuariosapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F14BD64B-4949-4A1B-A171-C4A8F910BF88}|UsuariosAPI\\UsuariosAPI.csproj|c:\\users\\carlo\\source\\repos\\apigateway_desafio2\\usuariosapi\\usuariosapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F14BD64B-4949-4A1B-A171-C4A8F910BF88}|UsuariosAPI\\UsuariosAPI.csproj|solutionrelative:usuariosapi\\usuariosapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F14BD64B-4949-4A1B-A171-C4A8F910BF88}|UsuariosAPI\\UsuariosAPI.csproj|c:\\users\\carlo\\source\\repos\\apigateway_desafio2\\usuariosapi\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F14BD64B-4949-4A1B-A171-C4A8F910BF88}|UsuariosAPI\\UsuariosAPI.csproj|solutionrelative:usuariosapi\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -63,6 +71,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\UsuariosAPI\\Dockerfile",
+              "RelativeDocumentMoniker": "UsuariosAPI\\Dockerfile",
+              "ToolTip": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\UsuariosAPI\\Dockerfile",
+              "RelativeToolTip": "UsuariosAPI\\Dockerfile",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-09-16T17:51:38.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UsuariosAPI",
+              "DocumentMoniker": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\UsuariosAPI\\UsuariosAPI.csproj",
+              "RelativeDocumentMoniker": "UsuariosAPI\\UsuariosAPI.csproj",
+              "ToolTip": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\UsuariosAPI\\UsuariosAPI.csproj",
+              "RelativeToolTip": "UsuariosAPI\\UsuariosAPI.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-16T17:51:30.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "UsuariosController.cs",
               "DocumentMoniker": "C:\\Users\\carlo\\source\\repos\\APIGateway_DESAFIO2\\UsuariosAPI\\Controllers\\UsuariosController.cs",
               "RelativeDocumentMoniker": "UsuariosAPI\\Controllers\\UsuariosController.cs",
